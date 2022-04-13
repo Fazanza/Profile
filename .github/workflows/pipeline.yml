@@ -1,0 +1,39 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - master
+    pull_request:
+      branches: [master]
+      types: [opened, synchronize]
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checks out github repository
+        uses: actions/checkout@v3
+
+      - name: npm install
+        run: npm install
+      - name: lint
+        run: npm run eslint
+      - name: building repository
+        run: npm run build
+      - name: Testing files
+        run: npm run test
+  
+  tag_release:
+    needs: [simple_deployment_pipeline]
+    runs-on: ubuntu-20.04
+    if: ${{ github.event_name === 'push' }}
+    steps:
+      - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
+      - name: Bump the version number as patch and push the tag
+        uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
