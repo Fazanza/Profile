@@ -1,15 +1,7 @@
-import Footer from "./components/Footer";
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <>
-    <Routes>
-      <Route path='/' element={} />
-      <Route path='/' element={ } />
-    </Routes>
-    <Footer />
-    </>
-  )
-}
+const App = () => (
+  <Footer />
+);
 
 export default App;
