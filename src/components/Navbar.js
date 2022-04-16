@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
 import navigation from '../assests/data/navigation';
 
 const Navbar = () => {
@@ -58,7 +58,12 @@ const Navbar = () => {
             >
               {navigation.map((page) => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Link to={page.link}>{page.title}</Link>
+                  <Link
+                    to={page.link}
+                    style={{ color: 'inherit', textDecoration: 'inherit' }}
+                  >
+                    {page.title}
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -71,14 +76,29 @@ const Navbar = () => {
           >
             Wynn Kaza
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{
+            flexGrow: 1,
+            display: { xs: 'none', md: 'flex' },
+            justifyContent: 'center',
+          }}
+          >
             {navigation.map((page) => (
               <Button
                 key={page.title}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                variant="outlined"
+                sx={{
+                  display: 'block',
+                  color: 'white',
+                  marginLeft: 3,
+                  marginRight: 3,
+                }}
               >
-                <Link to={page.link}>{page.title}</Link>
+                <Link
+                  to={page.link}
+                  style={{ color: 'inherit', textDecoration: 'inherit' }}
+                >
+                  {page.title}
+                </Link>
               </Button>
             ))}
           </Box>
