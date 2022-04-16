@@ -8,6 +8,8 @@ const Projects = () => (
       alt={project.alt}
       title={project.title}
       content={project.content}
+      date={project.data}
+      link={project.links}
     />
   ))
 );

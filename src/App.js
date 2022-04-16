@@ -4,9 +4,11 @@ import About from './components/About';
 import Experiences from './components/Experiences';
 import Projects from './components/Projects';
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 const App = () => (
   <>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/experiences" element={<Experiences />} />

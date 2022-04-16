@@ -2,7 +2,7 @@ const projects = [
   {
     title: 'Website',
     data: 'April 2022',
-    img: '../../assests/images/website.jfif',
+    img: '/images/website.jfif',
     alt: 'picture of clouds',
     content: 'Personal portfolio website developed using React',
     important: 'true',
