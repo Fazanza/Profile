@@ -1,6 +1,6 @@
 const about = [
   {
-    topic: 'Name: ',
+    topic: 'Name:',
     answer: 'Wynn Kaza',
   },
   {
@@ -9,7 +9,7 @@ const about = [
   },
   {
     topic: 'Email: ',
-    answer: 'wynnmk@gmail.com',
+    answer: 'wynnmka@gmail.com',
   },
   {
     topic: 'University: ',

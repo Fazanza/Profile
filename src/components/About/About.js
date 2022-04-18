@@ -12,15 +12,16 @@ import about from '../../assests/data/about';
 const About = () => (
   <Box sx={{ width: '100%' }}>
     <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-      <Grid item xs={6}>
+      <Grid item xs={12}>
         <Typography
           sx={{
-            fontSize: '1.2em',
+            fontSize: '2.2em',
             display: 'flex',
+            marginTop: '0.3em',
             justifyContent: 'center',
           }}
         >
-          About me
+          <u>About me</u>
         </Typography>
         <Icon
           sx={{
@@ -28,6 +29,9 @@ const About = () => (
             color: '#0850A2',
             display: 'flex',
             direction: 'column',
+            width: '100%',
+            justifyContent: 'center',
+            height: '40%',
           }}
         >
           <GitHubIcon fontSize="large" />
@@ -35,15 +39,21 @@ const About = () => (
           <LinkedInIcon fontSize="large" />
         </Icon>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={12} sx={{ marginTop: '3px' }}>
         {about.map((item) => (
           <Typography
             id={item.topic}
             sx={{
               fontSize: '1.2em',
+              display: 'flex',
+              justifyContent: 'center',
+              direction: 'column',
             }}
           >
-            {item.topic}
+            <b>
+              {item.topic}
+              &nbsp;
+            </b>
             {item.answer}
           </Typography>
         ))}
