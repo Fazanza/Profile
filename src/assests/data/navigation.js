@@ -4,16 +4,16 @@ const navigation = [
     link: '/',
   },
   {
-    title: 'About',
-    link: '/about',
-  },
-  {
     title: 'Projects',
     link: '/projects',
   },
   {
     title: 'Experiences',
     link: '/experiences',
+  },
+  {
+    title: 'About',
+    link: '/about',
   },
 ];
 
