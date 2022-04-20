@@ -5,6 +5,7 @@ import Experiences from './components/Experiences/Experiences';
 import Projects from './components/Project/Projects';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import ProjectPage from './components/Project/ProjectPage';
 
 const App = () => (
   <>
@@ -12,7 +13,9 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/experiences" element={<Experiences />} />
-      <Route path="/projects" element={<Projects />} />
+      <Route path="/projects" element={<Projects />}>
+        <Route path="/projects/:id" element={<ProjectPage />} />
+      </Route>
       <Route path="/about" element={<About />} />
     </Routes>
     <Footer />

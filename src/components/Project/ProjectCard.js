@@ -4,15 +4,23 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import CardActions from '@mui/material/CardActions';
+import PageviewSharpIcon from '@mui/icons-material/PageviewSharp';
+import Icon from '@mui/material/Icon';
 import importAll from '../importAllImages';
+import GithubLink from './GithubLink';
 
 const ProjectCard = ({
-  image, alt, title, content, date, link,
+  image,
+  alt,
+  title,
+  content,
+  date,
+  link,
+  Github,
 }) => {
   const images = importAll(require.context('../../assests/images', false, /\.(png|jpg|jpeg|gif|svg|jfif)$/));
   return (
-    <Card sx={{ maxWidth: 345 }} variant="outlined">
+    <Card sx={{ width: 345, height: 355 }} variant="outlined">
       <CardActionArea target="_blank" href={link}>
         <CardMedia
           component="img"
@@ -21,18 +29,23 @@ const ProjectCard = ({
           alt={alt}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" color="black" component="div">
             {title}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.seconday">
             {date}
           </Typography>
-          <Typography variant="body2" color="text.seconday">
+          <Typography sx={{ mb: 1.5, fontSize: 10 }} color="text.seconday">
             {content}
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <a href={link} target="_blank" rel="noopener noreferrer">Github</a>
-      </CardActions>
+      <CardContent>
+        {Github.length > 0 ? <GithubLink link={link} /> : null}
+        <Icon>
+          <PageviewSharpIcon />
+        </Icon>
+      </CardContent>
     </Card>
   );
 };

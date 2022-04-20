@@ -19,7 +19,18 @@ const Projects = () => (
           <u>Projects</u>
         </Typography>
       </Grid>
-      <Grid item xs={12}>
+      <Grid
+        item
+        xs={12}
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '15px',
+          marginLeft: '15%',
+          marginRight: '10%',
+          marginTop: '0.75em',
+        }}
+      >
         {projects.map((project) => (
           <ProjectCard
             image={project.img}
@@ -28,6 +39,7 @@ const Projects = () => (
             content={project.content}
             date={project.data}
             link={project.links}
+            Github={project.Github}
           />
         ))}
       </Grid>
