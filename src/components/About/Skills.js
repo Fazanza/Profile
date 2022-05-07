@@ -30,6 +30,7 @@ const Skills = () => (
     >
       {skills.map((item) => (
         <SkillCard
+          key={item.skill}
           skill={item.skill}
           points={item.points}
         />

@@ -9,7 +9,7 @@ const skills = [
   },
   {
     skill: 'Javascript',
-    points: 3.5,
+    points: 3,
   },
   {
     skill: 'Java',

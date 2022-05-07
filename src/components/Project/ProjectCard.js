@@ -4,8 +4,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import PageviewSharpIcon from '@mui/icons-material/PageviewSharp';
-import Icon from '@mui/material/Icon';
 import importAll from '../importAllImages';
 import GithubLink from './GithubLink';
 
@@ -21,7 +19,7 @@ const ProjectCard = ({
   const images = importAll(require.context('../../assests/images', false, /\.(png|jpg|jpeg|gif|svg|jfif)$/));
   return (
     <Card sx={{ width: 345, height: 355 }} variant="outlined">
-      <CardActionArea target="_blank" href={link}>
+      <CardActionArea href={link}>
         <CardMedia
           component="img"
           height="140"
@@ -42,9 +40,6 @@ const ProjectCard = ({
       </CardActionArea>
       <CardContent>
         {Github.length > 0 ? <GithubLink link={link} /> : null}
-        <Icon>
-          <PageviewSharpIcon />
-        </Icon>
       </CardContent>
     </Card>
   );

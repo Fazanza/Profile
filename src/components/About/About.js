@@ -5,6 +5,7 @@ import Icon from '@mui/material/Icon';
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 import Github from './Github';
 import Skills from './Skills';
 import about from '../../assests/data/about';
@@ -23,26 +24,61 @@ const About = () => (
         >
           <u>About me</u>
         </Typography>
-        <Icon
+        <Box
           sx={{
-            fontSize: '10em',
-            color: '#0850A2',
             display: 'flex',
-            direction: 'column',
-            width: '100%',
+            flexDirection: 'row',
             justifyContent: 'center',
-            height: '40%',
+            alignItems: 'center',
+            marginTop: '0.4em',
           }}
         >
-          <GitHubIcon fontSize="large" />
-          <EmailIcon fontSize="large" />
-          <LinkedInIcon fontSize="large" />
-        </Icon>
+          <Link
+            href="https://github.com/Fazanza"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon
+              sx={{
+                width: '100%',
+                height: '80%',
+              }}
+            >
+              <GitHubIcon fontSize="large" />
+            </Icon>
+          </Link>
+          <Link
+            href="mailto:wynnmka@gmail.com"
+          >
+            <Icon
+              sx={{
+                width: '100%',
+                height: '80%',
+              }}
+            >
+              <EmailIcon fontSize="large" />
+            </Icon>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/wynn-kaza-24a773223/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Icon
+              sx={{
+                width: '100%',
+                height: '80%',
+              }}
+            >
+              <LinkedInIcon fontSize="large" />
+            </Icon>
+          </Link>
+        </Box>
       </Grid>
-      <Grid item xs={12} sx={{ marginTop: '3px' }}>
+      <Grid item xs={12}>
         {about.map((item) => (
           <Typography
-            id={item.topic}
+            key={item.topic}
             sx={{
               fontSize: '1.2em',
               display: 'flex',
