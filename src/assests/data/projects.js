@@ -68,7 +68,7 @@ const projects = [
     alt: 'picture of clouds',
     content: 'Achieved multiple circuit analysis program using a function generator',
     important: false,
-    links: `${url}/CircuitAnalysiswithFunctionGenerator`,
+    links: `${url}/CircuitAnalysis`,
     Github: 'https://github.com/Fazanza/Profile',
     inProgress: true,
     specialities: ['Hardware'],

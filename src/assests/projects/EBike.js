@@ -1,6 +1,5 @@
 const EBike = () => (
   <div>
-    Hello World
     <u>EBike</u>
   </div>
 );

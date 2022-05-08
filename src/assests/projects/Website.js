@@ -1,6 +1,5 @@
 const Website = () => (
   <div>
-    Hello World
     <u>Website</u>
   </div>
 );

@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Link } from 'react-router-dom';
 import importAll from '../importAllImages';
 import GithubLink from './GithubLink';
 
@@ -19,7 +19,7 @@ const ProjectCard = ({
   const images = importAll(require.context('../../assests/images', false, /\.(png|jpg|jpeg|gif|svg|jfif)$/));
   return (
     <Card sx={{ width: 345, height: 355 }} variant="outlined">
-      <CardActionArea href={link}>
+      <Link to={link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
         <CardMedia
           component="img"
           height="140"
@@ -37,7 +37,7 @@ const ProjectCard = ({
             {content}
           </Typography>
         </CardContent>
-      </CardActionArea>
+      </Link>
       <CardContent>
         {Github.length > 0 ? <GithubLink link={link} /> : null}
       </CardContent>
